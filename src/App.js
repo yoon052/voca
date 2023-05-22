@@ -1,14 +1,19 @@
-import DayList from './component/DayList';
-import Header from "./component/Header"
-import Day from "./component/Day"
+import Header from "./component/Header";
+import DayList from "./component/DayList";
+import Day from "./component/Day";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
-function App() {
+function App(){
   return (
-    <div className="App">
-      <Header />
-      <DayList />
-      <Day />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<DayList />} />
+          <Route path="/day" element={<Day /> } />                
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
