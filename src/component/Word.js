@@ -23,7 +23,7 @@ export default function Word({word:w}){
             if(res.ok){
                 setIsDone(!isDone);
             }
-        })
+        });
     }
 
     function toggleShow() {
